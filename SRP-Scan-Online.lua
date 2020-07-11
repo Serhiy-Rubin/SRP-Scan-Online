@@ -5,6 +5,7 @@ script_version("1.11.07.20")
 local sampev = require "lib.samp.events"
 local antiflood = os.clock() * 1000
 local scan = false
+local player_find = {}
 
 function main()
     if not isSampLoaded() or not isSampfuncsLoaded() then return end
@@ -13,7 +14,6 @@ function main()
 	while true do
 		wait(0)
 		if scan then
-			player_find = {}
 			players_noafk = 0
 			players_afk = 0
 			players_sleep = 0
